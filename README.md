@@ -7,8 +7,14 @@
 	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ## To Copy the code locally
+```
 git clone https://github.com/gng5125-team10/ChatBot.git
-
+```
+Add /modify files (the text in brackets is commit message)
+```
+git commit -am "Adding first version of docker image"
+git push
+```
 
 ## Flusk Python webserver
 https://github.com/pallets/flask/tree/master/tests
