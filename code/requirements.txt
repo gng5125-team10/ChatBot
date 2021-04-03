@@ -1,0 +1,5 @@
+flask
+contractions
+nltk
+numpy
+scikit-learn

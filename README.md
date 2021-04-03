@@ -19,9 +19,10 @@ https://docs.docker.com/compose/gettingstarted/
 
 
 ## Using curl to query API
+```
 curl https://api.datamuse.com/words?sp=t??k
 curl http://127.0.0.1:5000/test%20wfjsdofn%20a%20wolnot
-
+```
 
 ## Deploy docker image to Google Cloud
 https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
@@ -29,3 +30,4 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 
 ## Setup DialogFlow fulfilment
 https://www.youtube.com/watch?v=n4IPOeFCDxI
+
