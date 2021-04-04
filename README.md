@@ -37,3 +37,10 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 ## Setup DialogFlow fulfilment
 https://www.youtube.com/watch?v=n4IPOeFCDxI
 
+
+## Model Persistence
+https://scikit-learn.org/stable/modules/model_persistence.html
+
+
+## Using Python Freeze to compile python files
+https://wiki.python.org/moin/Freeze
