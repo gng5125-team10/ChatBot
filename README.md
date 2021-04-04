@@ -23,6 +23,12 @@ https://realpython.com/flask-by-example-part-1-project-setup/
 ## Dockerfile for Python Flusk
 https://docs.docker.com/compose/gettingstarted/
 
+## Build and run Docker container
+```
+docker build --no-cache -t gng5125_team10/chatbotapi .
+docker run  -p 5000:5000  gng5125_team10/chatbotapi
+```
+
 
 ## Using curl to query API
 ```

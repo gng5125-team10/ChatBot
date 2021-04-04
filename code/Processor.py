@@ -117,6 +117,8 @@ def getBook(text):
 
 
 def TrainModel():
+
+    print("Training model")
     # Create data frame
     num_words = 200
     num_records = 200
