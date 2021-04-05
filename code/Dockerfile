@@ -1,13 +1,9 @@
-#FROM python:3.6-alpine
-FROM python:3.6
+FROM python:3.9-slim-buster
+
 
 WORKDIR /code
 ENV FLASK_APP=NLPWebserver.py
 ENV FLASK_RUN_HOST=0.0.0.0
-
-#For alpine
-#RUN apk add build-base
-
 
 
 ENV PYTHON_PACKAGES="\
@@ -20,7 +16,7 @@ ENV PYTHON_PACKAGES="\
 	scikit-learn \
 	wordcloud \
     " 
-
+RUN apt-get update && apt-get -y install gcc
 RUN pip install --no-cache-dir $PYTHON_PACKAGES
 
 

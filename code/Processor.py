@@ -15,11 +15,44 @@ import random
 
 books_list = ['bible-kjv.txt', 'edgeworth-parents.txt', 'milton-paradise.txt', 'whitman-leaves.txt', 'austen-sense.txt']
 
-#sklearn.svm should be trained by calling TrainModel before use
-model_SVM = make_pipeline(StandardScaler(with_mean=False), SVC(gamma='auto'))
 
-#TFIDF vectorizer, should be initialized by calling TrainModel
-tfidf_vect = TfidfVectorizer(ngram_range=(1,2))
+class model_SVM_TFIDF:
+
+  #train model during cration 
+  # We can load data from a file in future implementation
+  def __init__(self):
+    self.Train()
+
+  #sklearn.svm should be trained by calling TrainModel before use
+  model = make_pipeline(StandardScaler(with_mean=False), SVC(gamma='auto')) 
+  
+  #TFIDF vectorizer, should be initialized by calling TrainModel
+  tfidf_vect = TfidfVectorizer(ngram_range=(1,2))
+     
+  #Train model
+  def Train(self):
+      print("Training model")
+      # Create data frame
+      #select book samples
+      df = selectSamplesOfBooks(200, 200)
+
+      #feature TFIDF
+      features_tfidf = self.tfidf_vect.fit_transform(df["Content"].values)
+
+      #Train SVM model
+      self.model.fit(features_tfidf, df["book_index"].values)
+  
+  #def loadFromFile(file): 
+    #TODO
+
+  #this predicts a book based on text
+  def PredictLabel(self, text):
+      cleaned_text = prepareText(text)
+      feture_vector = self.tfidf_vect.transform([cleaned_text])
+      index = self.model.predict(feture_vector)
+      #return index
+      return books_list[index[0]]
+  
 
 
 #this function runs when webserver starts
@@ -28,9 +61,6 @@ def Init():
     nltk.download('stopwords')
     nltk.download('wordnet')
     nltk.download('punkt')
-
-    #Train model
-    TrainModel()
 
 
 
@@ -107,27 +137,7 @@ def selectSamplesOfBooks(num_records, sample_length):
   return df
 
 
-#this predicts a book based on text
-def getBook(text):
-    cleaned_text = prepareText(text)
-    feture_vector = tfidf_vect.transform([cleaned_text])
-    index = model_SVM.predict(feture_vector)
-    #return index
-    return books_list[index[0]]
 
 
-def TrainModel():
 
-    print("Training model")
-    # Create data frame
-    num_words = 200
-    num_records = 200
 
-    #select book samples
-    df = selectSamplesOfBooks(num_records, num_words)
-
-    #feature TFIDF
-    fetures_tfidf = tfidf_vect.fit_transform(df["Content"].values)
-
-    #Train SVM model
-    model_SVM.fit(fetures_tfidf, df["book_index"].values)

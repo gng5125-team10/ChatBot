@@ -2,6 +2,8 @@ from flask import Flask
 import Processor as processor
 app = Flask(__name__)
 
+svm = processor.model_SVM_TFIDF()
+
 @app.route('/')
 def hello():
     return "Hello World!"
@@ -9,7 +11,7 @@ def hello():
 
 @app.route('/<text>')
 def hello_name(text):
-    book_label = processor.getBook(text)
+    book_label = svm.PredictLabel(text)
     return "Text from the book {}".format(book_label)
 
 if __name__ == '__main__':
