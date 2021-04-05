@@ -15,6 +15,7 @@ ENV PYTHON_PACKAGES="\
 	pillow \
 	scikit-learn \
 	wordcloud \
+	pyopenssl \
     " 
 RUN apt-get update && apt-get -y install gcc
 RUN pip install --no-cache-dir $PYTHON_PACKAGES

@@ -16,5 +16,5 @@ def hello_name(text):
 
 if __name__ == '__main__':
     processor.Init()
-    app.run()
+    app.run(ssl_context='adhoc')
 
