@@ -34,7 +34,7 @@ class model_SVM_TFIDF:
       print("Training model")
       # Create data frame
       #select book samples
-      df = selectSamplesOfBooks(200, 200)
+      df = selectSamplesOfBooks(50, 50)
 
       #feature TFIDF
       features_tfidf = self.tfidf_vect.fit_transform(df["Content"].values)

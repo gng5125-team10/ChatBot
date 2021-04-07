@@ -26,8 +26,8 @@ https://docs.docker.com/compose/gettingstarted/
 
 ## Build and run Docker container
 ```
-docker build --no-cache -t gng5125_team10/chatbotapi .
-docker run  -p 5000:5000  gng5125_team10/chatbotapi
+docker build --no-cache -t chatbotapi .
+docker run  -p 5000:5000  chatbotapi
 ```
 
 ## Using curl to query API
@@ -102,6 +102,16 @@ kubernetes    ClusterIP      10.35.240.1    <none>         443/TCP          14m
 ````
 Where ```34.95.48.224``` is IP of the service
 
+9. To delete
+````
+ delete deployment chatbot-api
+ delete service chatbot-api
+````
+
 
 ## Setup DialogFlow fulfilment
 https://www.youtube.com/watch?v=n4IPOeFCDxI
+
+## Setting-up HTTPs via ngnx server
+https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
+https://medium.com/analytics-vidhya/how-to-deploy-a-python-api-with-fastapi-with-nginx-and-docker-1328cbf41bc
