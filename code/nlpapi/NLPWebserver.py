@@ -27,7 +27,7 @@ def hello():
 
 
 @app.route('/bot', methods = ['POST', 'GET'])
-#@auth.login_required
+@auth.login_required
 def authorship():
 
     try:

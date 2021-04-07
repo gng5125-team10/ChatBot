@@ -12,6 +12,7 @@ ENV PYTHON_PACKAGES="\
 	numpy \
 	pandas \
 	pillow \
+	pytest \
 	scikit-learn \
 	wordcloud \
 	flask-httpauth\
@@ -25,16 +26,7 @@ RUN python -m nltk.downloader punkt && \
  	 python -m nltk.downloader gutenberg
 
 
-#to install nginx in local container
-#RUN apt-get install -y certbot
-#RUN  apt-get install -y nginx
-#COPY default /etc/nginx/sites-enabled/default
-#RUN service nginx start
-
-
-#EXPOSE 443 for https
 EXPOSE 5000
 COPY . .
 
-#RUN flask run -d
 CMD ["flask", "run"]

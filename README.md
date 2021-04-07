@@ -26,7 +26,7 @@ https://docs.docker.com/compose/gettingstarted/
 
 ## Build and run Docker container
 ```
-docker build --no-cache -t chatbotapi .
+docker build --no-cache -t chatbotapi ./code/nlpapi
 docker run  -p 5000:5000  chatbotapi
 ```
 
@@ -61,7 +61,7 @@ https://cloud.google.com/container-registry/docs/pushing-and-pulling
 
 3. Tag and push the image (in cloud shell)
 ```
-
+docker tag chatbotapi gcr.io/gng5125t10chatbotapi/chatbotapi:v0.4
 docker push gcr.io/gng5125t10chatbotapi/chatbotapi:v0.0
 ```
 
