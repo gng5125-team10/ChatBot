@@ -2,11 +2,16 @@ from flask import Flask, request, jsonify, json
 import Processor as processor
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
+import logging
+
 #import ssl
 #import os.path
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
+
+logger = logging.getLogger('NLPWebserver')
+logger.setLevel(logging.DEBUG)
 
 users = {
     "dialogflow": generate_password_hash("!WhatAGreatDay!"),
@@ -33,15 +38,16 @@ def authorship():
     try:
         bot_data = json.loads(request.get_data())
         text = bot_data['queryResult']['queryText']
-        print("Received text:", text)
+        logger.info("Received text: " + text)
         book_label = svm.PredictLabel(text)
         return_text = "Text from the book {}".format(book_label)
 
+        logger.info("Response: " + return_text)
+
         return jsonify(
         status=200,
-        replies=[
-            {
-            'fulfillmentMessages': [
+#        replies=[
+        fulfillmentMessages= [
                 {
                 'text': {
                     'text': [
@@ -50,12 +56,11 @@ def authorship():
                 }
                 }
             ]
-            }
-        ]
+
         )
 
     except:
-        print("error decoding", request.get_data())
+        logger.error("error decoding", request.get_data())
         return jsonify(
         status=400,
         replies=[]
@@ -66,7 +71,7 @@ if __name__ == '__main__':
     processor.Init()
 
     #for http
-    app.run()
+    app.run(host='0.0.0.0')
 
     
     #for https

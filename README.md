@@ -62,7 +62,7 @@ https://cloud.google.com/container-registry/docs/pushing-and-pulling
 3. Tag and push the image (in cloud shell)
 ```
 docker tag chatbotapi gcr.io/gng5125t10chatbotapi/chatbotapi:v0.4
-docker push gcr.io/gng5125t10chatbotapi/chatbotapi:v0.0
+docker push gcr.io/gng5125t10chatbotapi/chatbotapi:v0.4
 ```
 
 4.  Deploying container in GKE cluster
@@ -86,7 +86,7 @@ docker push gcr.io/gng5125t10chatbotapi/chatbotapi:v0.0
 
 7. Deploying an application to the cluster
 ```` 
- kubectl create deployment chatbot-api --image=gcr.io/gng5125t10chatbotapi/chatbotapi:v0.0
+ kubectl create deployment chatbot-api --image=gcr.io/gng5125t10chatbotapi/chatbotapi:v0.4
 ````
 8. Exposing the deployment to the world
 ````
@@ -104,8 +104,8 @@ Where ```34.95.48.224``` is IP of the service
 
 9. To delete
 ````
- delete deployment chatbot-api
- delete service chatbot-api
+kubectl delete deployment chatbot-api
+kubectl delete service chatbot-api
 ````
 
 
@@ -115,3 +115,6 @@ https://www.youtube.com/watch?v=n4IPOeFCDxI
 ## Setting-up HTTPs via ngnx server
 https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
 https://medium.com/analytics-vidhya/how-to-deploy-a-python-api-with-fastapi-with-nginx-and-docker-1328cbf41bc
+
+
+## Hiroku deployment

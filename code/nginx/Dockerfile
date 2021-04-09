@@ -1,7 +1,7 @@
 FROM nginx
 
 #COPY default /etc/nginx/sites-enabled/default
-COPY default  /etc/nginx/conf.d/default.conf
+#COPY default  /etc/nginx/conf.d/default.conf
 #COPY nginx.conf /etc/nginx/nginx.conf
 #COPY nginx.conf /etc/nginx/conf.d/default.conf
 #COPY cert.pem /etc/letsencrypt/live/api.domain.com/fullchain.pem

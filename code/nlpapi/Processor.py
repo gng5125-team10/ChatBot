@@ -7,6 +7,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
+import logging
 
 
 #for model training, can be removed if we load model from a file
@@ -14,6 +15,9 @@ import pandas as pd
 import random
 
 books_list = ['bible-kjv.txt', 'edgeworth-parents.txt', 'milton-paradise.txt', 'whitman-leaves.txt', 'austen-sense.txt']
+
+logger = logging.getLogger('Processor')
+logger.setLevel(logging.DEBUG)
 
 
 class model_SVM_TFIDF:
@@ -31,16 +35,18 @@ class model_SVM_TFIDF:
      
   #Train model
   def Train(self):
-      print("Training model")
+      logger.info("Started training sklearn.svm model")
       # Create data frame
       #select book samples
-      df = selectSamplesOfBooks(50, 50)
+      df = selectSamplesOfBooks(300,100)
 
       #feature TFIDF
       features_tfidf = self.tfidf_vect.fit_transform(df["Content"].values)
 
       #Train SVM model
       self.model.fit(features_tfidf, df["book_index"].values)
+
+      logger.info("Finished training sklearn.svm model")
   
   #def loadFromFile(file): 
     #TODO
