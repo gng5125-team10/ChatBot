@@ -1,1 +1,0 @@
-from NLPWebserver import app as application
