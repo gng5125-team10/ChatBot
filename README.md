@@ -118,3 +118,14 @@ https://medium.com/analytics-vidhya/how-to-deploy-a-python-api-with-fastapi-with
 
 
 ## Hiroku deployment
+```
+heroku login
+heroku container:push web --app=gng5125t10-chatbot-api
+heroku container:release web --app=gng5125t10-chatbot-api
+```
+To see logs:
+```
+heroku logs --tail --app=gng5125t10-chatbot-api
+```
+Also see:
+https://devcenter.heroku.com/articles/container-registry-and-runtime
