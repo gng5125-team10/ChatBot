@@ -17,7 +17,7 @@ We use Gitflow and API that runs classification code written in Python.
 	https://hub.docker.com/editions/community/docker-ce-desktop-windows/
 	2. Git
 	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-	3. Heroku CLI
+	3. Heroku CLI (to deploy to Heroku cloud)
 	https://devcenter.heroku.com/articles/heroku-cli
 
 ## To Copy the code locally
