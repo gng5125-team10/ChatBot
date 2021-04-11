@@ -1,5 +1,6 @@
 
 pesponses_sadness = {
+  0: 'Eat chocolate and eat more chocolate',
   1: 'I know. I think I understand to some extent. I am willing to try to understand better.\n'+ \
 		'I cant give you a hug. I would if I could. You know that. \n' +\
 		'This will look better later. Trust me.',
