@@ -6,8 +6,8 @@ We choose a chatbot that offers loneliness solutions as a topic for GNG5125 with
 
 ## Data
 For our project, we gathered data using web scraping from [A lonely life forum](https://www.alonelylife.com/forumdisplay.php?fid=4), where people chat, share their feelings, offer advice and solutions.
-**Important note** In no way we wanted to offend the original posters of the forum. With the utmost respect and from the bottom of our hearts, we wish you to find ways to deal with the challenges you face.
-We only hope that the data collected could be used to makes people's lives better.
+
+**Important note:** In no way we wanted to offend the original posters of the forum. With the utmost respect and from the bottom of our hearts, we wish you to find ways to deal with the challenges you face. We only hope that the data collected could be used to makes people's lives better.
 
 ## Thechnology
 We use Gitflow and API that runs classification code written in Python. 
