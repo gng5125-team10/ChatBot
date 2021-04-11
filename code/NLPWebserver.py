@@ -40,10 +40,12 @@ def authorship():
         text = bot_data['queryResult']['queryText']
         #TODO Change loglevel to info (we use warning now so the messages appear by default)
         logging.warning("Received text: " + text)
-        book_label = svm.PredictLabel(text)
-        return_text = "Text from the book {}".format(book_label)
+        #TODO: may need to incorporate context here
+        label = svm.PredictLabel(text)
+        response = svm.getResponseForALabel(label)
+        
 
-        logging.warning("Response: " + return_text)
+        logging.warning("Response: " + response)
 
         return jsonify(
         status=200,
@@ -51,7 +53,7 @@ def authorship():
                 {
                 'text': {
                     'text': [
-                        return_text
+                        response
                     ]
                 }
                 }

@@ -9,6 +9,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 import logging
 
+import ChatBotResponses as responses
+
 
 #for model training, can be removed if we load model from a file
 import pandas as pd
@@ -25,6 +27,7 @@ class model_SVM_TFIDF:
   #train model during cration 
   # We can load data from a file in future implementation
   def __init__(self):
+    #print (responses.pesponses_sadness)
     self.Train()
 
   #sklearn.svm should be trained by calling TrainModel before use
@@ -38,7 +41,7 @@ class model_SVM_TFIDF:
       logging.warning("Started training sklearn.svm model")
       # Create data frame
       #select book samples
-      df = selectSamplesOfBooks(300,100)
+      df = selectSamplesOfBooks(300,80)
 
       #feature TFIDF
       features_tfidf = self.tfidf_vect.fit_transform(df["Content"].values)
@@ -56,9 +59,13 @@ class model_SVM_TFIDF:
       cleaned_text = prepareText(text)
       feture_vector = self.tfidf_vect.transform([cleaned_text])
       index = self.model.predict(feture_vector)
+      return index[0]
+
       #return index
-      return books_list[index[0]]
+      #return books_list[index[0]]
   
+  def getResponseForALabel(self, label):
+      return responses.pesponses_sadness[label]
 
 
 #this function runs when webserver starts
