@@ -6,11 +6,23 @@ We choose a chatbot that offers loneliness solutions as a topic for GNG5125 with
 
 ## Data
 For our project, we gathered data using web scraping from [A lonely life forum](https://www.alonelylife.com/forumdisplay.php?fid=4), where people chat, share their feelings, offer advice and solutions.
-
+We extracted \~40 000 posts (\~10 000 posts and \~30 000 responses)\
 **Important note:** In no way we wanted to offend the original posters of the forum. With the utmost respect and from the bottom of our hearts, we wish you to find ways to deal with the challenges you face. We only hope that the data collected could be used to makes people's lives better.
 
-## Thechnology
+## Technology
 We use Gitflow and API that runs classification code written in Python. 
+
+## Feature Engineering
+We used and compared several NLP feature extraction techniques:
+* TD-IDF
+* Word2Vec
+
+## Unsupervised learning
+During the unsupervised learning step we clustered the posts and determined the number of clusters the fits the data the best.
+To run clustering:
+```
+python ./code/clustering.py
+```
 
 ## Pre-requesties to build Chatbot API docker image
 	1. Docker has to be installed
@@ -58,3 +70,5 @@ https://devcenter.heroku.com/articles/container-registry-and-runtime
 
 ## Setup DialogFlow fulfilment
 https://www.youtube.com/watch?v=n4IPOeFCDxI
+
+
