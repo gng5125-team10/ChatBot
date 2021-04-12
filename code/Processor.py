@@ -8,6 +8,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 import logging
+from joblib import dump, load
+import random
 
 import ChatBotResponses as responses
 
@@ -27,8 +29,8 @@ class model_SVM_TFIDF:
   #train model during cration 
   # We can load data from a file in future implementation
   def __init__(self):
-    #print (responses.pesponses_sadness)
-    self.Train()
+    #self.Train()
+    self.loadFromFile('SVM_TFIDF.model')
 
   #sklearn.svm should be trained by calling TrainModel before use
   model = make_pipeline(StandardScaler(with_mean=False), SVC(gamma='auto')) 
@@ -51,8 +53,11 @@ class model_SVM_TFIDF:
 
       logging.warning("Finished training sklearn.svm model")
   
-  #def loadFromFile(file): 
-    #TODO
+  def loadFromFile(self, file):
+    logging.warning("Loading %s", file)
+    self.model = load(file)
+    df = pd.read_pickle("./kmean_res_df.pkl")
+    self.tfidf_vect.fit_transform(df["Posts"].values) 
 
   #this predicts a book based on text
   def PredictLabel(self, text):
@@ -65,7 +70,8 @@ class model_SVM_TFIDF:
       #return books_list[index[0]]
   
   def getResponseForALabel(self, label):
-      return responses.pesponses_sadness[label]
+      rsp = responses.responses[label]
+      return rsp[random.randrange(1, len(rsp))]
 
 
 #this function runs when webserver starts
