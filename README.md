@@ -24,6 +24,13 @@ To run clustering:
 python ./code/clustering.py
 ```
 
+## Unsupervised learning
+During the unsupervised we train and save model for use by the classification.
+To train model:
+```
+python ./code/model_training.py
+```
+
 ## Pre-requesties to build Chatbot API docker image
 	1. Docker has to be installed
 	https://hub.docker.com/editions/community/docker-ce-desktop-windows/
