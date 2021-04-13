@@ -2,7 +2,7 @@
 
 ## Introduction
 In these challenging times, loneliness and self-isolation [has increased](https://www.sciencedirect.com/science/article/abs/pii/S0165178120312257), particularly in older adults.
-We choose a chatbot that offers loneliness solutions as a topic for GNG5125 with the hope that it could contribute to the alleviation of this significant challenge.
+We choose a chatbot that offers loneliness help as a topic for GNG5125 with the hope that it could contribute to the alleviation of this significant challenge.
 
 ## Data
 For our project, we gathered data using web scraping from [A lonely life forum](https://www.alonelylife.com/forumdisplay.php?fid=4), where people chat, share their feelings, offer advice and solutions.
@@ -75,7 +75,12 @@ heroku logs --tail --app=gng5125t10-chatbot-api
 Also see:
 https://devcenter.heroku.com/articles/container-registry-and-runtime
 
-## Chatbot interface
+## Chatbot on the website
+The chatbot can be integrated into a website using DialogFlow "Messager integration".
+Once this integration is enabled in generate a code sniplet that should be copied to the webpage code.
+An example of the page is index.html file.
+This hile has been deploed to thea page below, give it a try!
+
 https://gng5125-team10.github.io/
 
 
