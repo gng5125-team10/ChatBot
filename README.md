@@ -24,8 +24,8 @@ To run clustering:
 python ./code/clustering.py
 ```
 
-## Unsupervised learning
-During the unsupervised we train and save model for use by the classification.
+## Supervised learning
+During the supervised we train and save model for use by the classification.
 To train model:
 ```
 python ./code/model_training.py
@@ -75,7 +75,7 @@ heroku logs --tail --app=gng5125t10-chatbot-api
 Also see:
 https://devcenter.heroku.com/articles/container-registry-and-runtime
 
-## Setup DialogFlow fulfilment
-https://www.youtube.com/watch?v=n4IPOeFCDxI
+## Chatbot interface
+https://gng5125-team10.github.io/
 
 
