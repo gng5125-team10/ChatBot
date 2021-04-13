@@ -75,7 +75,12 @@ heroku logs --tail --app=gng5125t10-chatbot-api
 Also see:
 https://devcenter.heroku.com/articles/container-registry-and-runtime
 
-## Chatbot interface
+## Chatbot on the website
+The chatbot can be integrated into a website using DialogFlow "Messager integration".
+Once this integration is enabled in generate a code sniplet that should be copied to the webpage code.
+An example of the page is index.html file.
+This hile has been deploed to thea page below, give it a try!
+
 https://gng5125-team10.github.io/
 
 
