@@ -36,7 +36,7 @@ if __name__ == '__main__':
   print(df_questions_only.head())
 
   ##TEST ONLY!!!: select sample 100 rows
-  df_questions_only = df_questions_only.sample(n=5000)
+  #df_questions_only = df_questions_only.sample(n=3000)
 
   print("Preparing text, len "+str(len(df_questions_only)))
   df_questions_only["PreparedText"] = df_questions_only['Posts'].apply(lambda x: processor.prepareText(x))
@@ -251,6 +251,10 @@ if __name__ == '__main__':
                       loc="best", title="Classes")
     ax.add_artist(legend1)
     ax.title.set_text(title)
+    plt.xlim(-6, 6)
+    plt.ylim(-6, 6)
+
+    plt.show()
 
   """### NUMBER OF CLUSTERS
   This takes ~30 min to run 
@@ -310,6 +314,11 @@ if __name__ == '__main__':
   df_sample = df.sample(n=1000)
   df_sample.to_excel("Random1000_questions_KMean.xlsx", engine='xlsxwriter')
 
+  for name, data in features_dictionary.items():
+      plotClusteringData(data, "kmean_"+name,  'kmean_'+ name)
+
+
+  """#### Plotting the clusters"""
 
   from sklearn.cluster import AgglomerativeClustering
   print("Cluster using AgglomerativeClustering")
@@ -338,9 +347,7 @@ if __name__ == '__main__':
       df[title] = cluster.labels_
 
     df.to_pickle(df_file_name)
-  df
-
-  """#### Plotting the clusters"""
 
   for name, data in features_dictionary.items():
-      plotClusteringData(data, "Agglomerative clustering clustering of "+name,  'agglom_'+ name)
+      plotClusteringData(data, "Agglomerative clustering clustering of "+name,  'agglom_'+ name) 
+
