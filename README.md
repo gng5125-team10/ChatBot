@@ -2,7 +2,7 @@
 
 ## Introduction
 In these challenging times, loneliness and self-isolation [has increased](https://www.sciencedirect.com/science/article/abs/pii/S0165178120312257), particularly in older adults.
-We choose a chatbot that offers loneliness solutions as a topic for GNG5125 with the hope that it could contribute to the alleviation of this significant challenge.
+We choose a chatbot that offers loneliness help as a topic for GNG5125 with the hope that it could contribute to the alleviation of this significant challenge.
 
 ## Data
 For our project, we gathered data using web scraping from [A lonely life forum](https://www.alonelylife.com/forumdisplay.php?fid=4), where people chat, share their feelings, offer advice and solutions.
