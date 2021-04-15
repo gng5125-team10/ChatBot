@@ -34,12 +34,13 @@ python ./code/model_training.py
 ## Pre-requesties to build Chatbot API docker image
 	1. Docker has to be installed
 	https://hub.docker.com/editions/community/docker-ce-desktop-windows/
-	2. Git
-	https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-	3. Heroku CLI (to deploy to Heroku cloud)
+	2. Heroku CLI (to deploy to Heroku cloud)
 	https://devcenter.heroku.com/articles/heroku-cli
 
 ## To Copy the code locally
+Git needs to be installed from:
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+then using command line:
 ```
 git clone https://github.com/gng5125-team10/ChatBot.git
 ```
