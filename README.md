@@ -76,11 +76,12 @@ Also see:
 https://devcenter.heroku.com/articles/container-registry-and-runtime
 
 ## Chatbot on the website
-The chatbot can be integrated into a website using DialogFlow "Messager integration".
-Once this integration is enabled in generate a code sniplet that should be copied to the webpage code.
+The Chatbot can be integrated into a website using DialogFlow's "Messager integration".
+Once this integration is enabled, it generates a code snippet that should be copied into the webpage html code.
 An example of the page is index.html file.
-This hile has been deploed to thea page below, give it a try!
+This file has been deployed to the page below, give it a try! 
 
 https://gng5125-team10.github.io/
 
+The free version of Heroku cloud unloads an image if it is not in use for 1 hr. Once it received a request, it loads the image again but ita takes 20-30 sec. As a result, if the Chatbot is not used for 1hr the, the first backend response is delayed and can time-out. If the response times out, no response is given in the Chatbot. The following responses should be Ok. This issue can be solved by upgrading to a paid version.   
 
